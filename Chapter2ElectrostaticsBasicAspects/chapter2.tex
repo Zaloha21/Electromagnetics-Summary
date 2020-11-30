@@ -12,7 +12,7 @@ Or in the case of a charge volume instead of a point charge the following holds:
 \begin{equation}
     \textbf{E(\textbf{r})} = k \int_V \rho(\textbf{r}')\frac{(\textbf{r}-\textbf{r}')}{|\textbf{r}-\textbf{r}'|^3}d\textbf{r}'
 \end{equation}
-Where \textbf{r}' is the location where an observation takes place. (The cubed factor comes from the fact that an unit vector can be expressed in a fraction, multiplied with the integrand $\textbf{r} = \frac{r_1-r_2}{|r_1-r_2|}$. Electric field density \textbf{D} can be described as $\textbf{D} = \epsilon \textbf{E}$ or $\textbf{D} = \frac{E}{k}$
+Where \textbf{r}' is the location where an observation takes place. (The cubed factor comes from the fact that an unit vector can be expressed in a fraction, multiplied with the integrand $\displaystyle \textbf{r} = \frac{r_1-r_2}{|r_1-r_2|}$. Electric field density \textbf{D} can be described as $\textbf{D} = \epsilon \textbf{E}$ or $\textbf{D} = \frac{E}{k}$
 \section{Electrostatic Potential}
 The electric field intensity can also be derived from the electrostatic potential as demonstrated below.
 \begin{equation}
@@ -60,7 +60,7 @@ The three important equations of electrostatics are:
     \end{aligned}
 \end{equation}
 
-\noindent With these it can be concluded that the potential $\phi$ outside of a uniformly charged sphere where $\rho(\textbf{r}) = 0$ is $\phi = - \frac{constant}{r}$
+\noindent With these it can be concluded that the potential $\phi$ outside of a uniformly charged sphere where $ \displaystyle \rho(\textbf{r}) = 0$ is $\displaystyle \phi = - \frac{constant}{r}$
 
 
 \section{Dirac's Delta Distribution}
@@ -93,7 +93,7 @@ Which entails that $\delta(x)$ is infinity for x = 0 and 0 otherwise. The follow
     \Delta \phi(\textbf{r}) = -k\int \delta(\textbf{r}-\textbf{r}') 4\pi \rho(\textbf{r}') d\textbf{r}' = -4k\pi\rho(\textbf{r})
 \end{equation}
 
-For $\phi(\textbf{r}) = k \int \frac{\rho(\textbf{r}')d\textbf{r}'}{|\textbf{r}-\textbf{r}'|}$ to satisfy equation \ref{2.5 Dirac relation} the following must hold:
+\noindent For $\displaystyle \phi(\textbf{r}) = k \int \frac{\rho(\textbf{r}')d\textbf{r}'}{|\textbf{r}-\textbf{r}'|}$ to satisfy equation \ref{2.5 Dirac relation} the following must hold:
 
 \begin{equation}
     \begin{aligned}
@@ -101,12 +101,13 @@ For $\phi(\textbf{r}) = k \int \frac{\rho(\textbf{r}')d\textbf{r}'}{|\textbf{r}-
     &\text{Or in other words}\\
     &\Delta_{\textbf{r}} = -4\pi \delta(\textbf{r})
     \end{aligned}
-    \label{2.5 poisson}
+    \label{2.5poisson}
 \end{equation}
 Which makes sense for $\textbf{r} \neq 0$ which after the following:
 
 \begin{equation}
 \begin{array}{c}
+    \displaystyle
 r=\sqrt{x^{2}+y^{2}+z^{2}}, \quad \triangle=\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}+\frac{\partial^{2}}{\partial z^{2}} \\
 
 \frac{\partial}{\partial x}\left(\frac{1}{r}\right)=-\frac{x}{r^{3}}, \quad \frac{\partial^{2}}{\partial x^{2}}\left(\frac{1}{r}\right)=-\frac{1}{r^{3}}+\frac{3 x^{2}}{r^{5}}\\
@@ -122,7 +123,7 @@ Can be integrated in the following relation:
    \end{aligned} 
 \end{equation}
 
-\noindent This then verifies \ref{2.5 poisson} holds and then shows that the Green's function is the potential of a negative unit point charge multiplied with $\epsilon_0$.
+\noindent This then verifies \ref{2.5poisson} holds and then shows that the Green's function is the potential of a negative unit point charge multiplied with $\epsilon_0$.
 \begin{equation}
     \rho(\textbf{r}') = -\epsilon_0 \delta(\textbf{r}')
 \end{equation}
@@ -130,11 +131,13 @@ When this is kept in mind the equation for the electrostatic potential is:
 \begin{equation}
     \phi(\textbf{r})= -k \int G(\textbf{r}-\textbf{r}')4 \pi \rho(\textbf{r}') d \textbf{r}' = G(\textbf{r})
 \end{equation}
-\subsection{Potential Energy of Charges}
+\section{Potential Energy of Charges}
 When a charge q is moved from A to B against the field \textbf{E} the work done can be described as follows:
 \begin{equation}
-    W = - \int_A^B q\textbf{E(r)} \cdot d\textbf{r} = q\int_A^B \nabla\phi \cdot d\textbf{r} =  q\int_A^B d\phi 
+    \begin{aligned}
+        W &= - \int_A^B q\textbf{E(r)} \cdot d\textbf{r} = q\int_A^B \nabla\phi \cdot d\textbf{r} =  q\int_A^B d\phi \\    
+          &= q(*\phi(B)-\phi(A))\\
+    \end{aligned}
 \end{equation}
 
-
-$\frac{\int_2^6 cos(3x)dx}{\sum_\infty \nabla \delta}$
+\noindent The minus sign infront of the integral represents the opposing force against the electricfield \textbf{E} 
