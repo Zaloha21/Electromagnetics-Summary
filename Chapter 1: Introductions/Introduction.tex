@@ -1,0 +1,46 @@
+\chapter{Introduction}
+
+In this book the differential forms of the Maxwell equations are used in addition to the integral forms. It follows the axiomatic introduction method of teaching electrodynamics, starting from electrostatics. The 2 starting equations are Faraday's law of induction and Amperes Flux theorem.
+\begin{equation}
+    \frac{d}{dt}\int_F \textbf{B}\cdot d\textbf{F} = - \oint_{C(F)}\textbf{E}\cdot d\textbf{l}
+    \label{Axiom1}
+\end{equation}
+
+\begin{equation}
+    \frac{d}{dt} \int_F \textbf{D} \cdot d \textbf{F} + \int_F \textbf{j} \cdot d \textbf{F} = \oint_{C(F)} \textbf{H} \cdot d \textbf{l}
+    \label{Axiom2}
+\end{equation}
+
+Where the new unit is $\textbf{D}= \epsilon_0 \textbf{E}+\textbf{P}$ with \textbf{D} is the Dielectric displacement and \textbf{P} the polarisation vector or dipole moment per unit volume of the medium. The first differential term is the displacement current as $\frac{\partial \textbf{D}}{\partial t}$ represents a current density. The other new unit is \textbf{H}, the magnetic field strength.\\
+\\
+Additionally when enclosing the surface F ,in the integral of \textbf{B} in equation \ref{Axiom1}, to a volume it will always yield 0. As no magnetic monopoles exist. 
+
+\begin{equation}
+    \int_{F_{enclosed}} \textbf{B} \cdot d\textbf{F} = 0
+\end{equation}
+
+As earlier said in this book the differential forms are also used. These are obtained from the divergence theorem. This entails that flux on a surface can be split up by dividing a volume in smaller volumes. The flux on the surface of the internal volumes cancle on the inside. When the volume approaches 0 it approaches the differential dV. 
+
+\begin{equation}
+    \nabla \cdot B = div\; \textbf{B}(\textbf{r}) = 0
+\end{equation}
+
+This way equation \ref{Axiom2} can also be rewritten (and simplified) to 
+\begin{equation}
+    \begin{aligned}
+        \int_{F_{closed}}\textbf{D} \cdot d\textbf{F} = Q\\
+        \nabla \cdot \textbf{D} = \frac{q}{V}
+    \end{aligned}
+\end{equation}
+
+This says that the divergence of dielectric displacement is  equal to the charge density. Where \textbf{H} = 0 as the surface is a closed surface.\\
+\\
+\noindent
+The Units are as follows:
+
+\begin{itemize}
+    \item \textbf{E}, electric field intensity ($V/m^2$)
+    \item \textbf{D}, electric flux density ($C/m^2$) or ($FV/m^2$)
+    \item \textbf{B}, magnetic flux density ($Wb/m^2$)
+    \item \textbf{H}, magnetic field intensity ($A/m$)
+\end{itemize}

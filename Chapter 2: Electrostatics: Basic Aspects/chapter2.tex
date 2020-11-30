@@ -1,0 +1,138 @@
+\chapter{Electrostatics: Basic Aspects}
+\section{Coulombs law and Electric fields}
+The electrical field is derived from coulombs law, in this case between charge 1 and 2.
+\begin{equation}
+    \textbf{F}_{12} = k\frac{q_1q_2}{r^3}\textbf{r}
+\end{equation}
+Where $k = \frac{1}{4\pi \epsilon_0}$ in (m/F). The electric field strength is dependent on location and a more generalised representation of the force between the charges. The equation of electric field strength \textbf{E(\textbf{r})} is as follows.
+\begin{equation}
+    \textbf{E\textbf{(r)}} = k \frac{q_1(\textbf{r}-\textbf{r}_1)}{|\textbf{r}-\textbf{r}_1|^3}
+\end{equation}
+Or in the case of a charge volume instead of a point charge the following holds:
+\begin{equation}
+    \textbf{E(\textbf{r})} = k \int_V \rho(\textbf{r}')\frac{(\textbf{r}-\textbf{r}')}{|\textbf{r}-\textbf{r}'|^3}d\textbf{r}'
+\end{equation}
+Where \textbf{r}' is the location where an observation takes place. (The cubed factor comes from the fact that an unit vector can be expressed in a fraction, multiplied with the integrand $\textbf{r} = \frac{r_1-r_2}{|r_1-r_2|}$. Electric field density \textbf{D} can be described as $\textbf{D} = \epsilon \textbf{E}$ or $\textbf{D} = \frac{E}{k}$
+\section{Electrostatic Potential}
+The electric field intensity can also be derived from the electrostatic potential as demonstrated below.
+\begin{equation}
+    \begin{aligned}
+        \nabla_r \frac{1}{|\textbf{r}-\textbf{r'}|} = - \frac{(\textbf{r}-\textbf{r}')}{|\textbf{r}-\textbf{r}'|^3} \text{   as   } |\textbf{r}| = \sqrt{x^2+y^2+z^2}\\
+        \textbf{E(\textbf{r})} = -k \int_V \rho  (\textbf{r}')\nabla_r \frac{1}{|\textbf{r}-\textbf{r}'|^3}d\textbf{r}' = -\nabla\phi
+    \end{aligned}
+\end{equation}
+This implies that the electric field is the gradient of the electrostatic potential $\phi(\textbf{r})$. And since $\nabla \times \nabla = 0$;
+\begin{equation}
+    \nabla \times \textbf{E} = 0
+\end{equation}
+This tells us that the rotation of the electric field is 0; the electric field is curl-free/rotation free. Next the flux is considered. The flux is $\textbf{E} \cdot d\textbf{F}$ and represents the amount of vector field coming through a surface. So the equation for flux is as follows.
+\begin{equation}
+    \Phi(\textbf{r}) = k\int_{V(F)} \rho(\textbf{r}') d\textbf{r}'\int_F\frac{(\textbf{r}-\textbf{r}_1)}{|\textbf{r}-\textbf{r}_1|^3} d\textbf{F(r)}
+\end{equation}
+Where V is the volume enclosed by surface F. Assuming that \textbf{r}' is outside of V means that the following holds. (Divergence theorem) 
+\begin{equation}
+    \nabla \cdot \textbf{E} = 4k\pi \rho
+\end{equation}
+For a conductive shell with no enclosed charge no flux is apparent. This is Gauss Law, which says charge is the source of electric fields.
+\section{The Equations of Electrostatics}
+
+The three important equations of electrostatics are:
+\begin{equation}
+    \begin{aligned}
+        &\textbf{E} = -\nabla \phi \\
+        &\nabla \cdot \textbf{E} = 4\pi k \rho(\textbf{r}) \text{   or   } \int\textbf{E}\cdot d \textbf{F} = 4\pi k \Sigma_i q_i\\
+        &\nabla \times \textbf{E} = 0
+    \end{aligned}
+\end{equation}
+
+\noindent From the first two equations the Poisson equation can be determined.
+\begin{equation}
+\begin{aligned}
+   &\Delta \phi = -4\pi k \rho(\textbf{r}) = \nabla \cdot \nabla \phi\\
+\end{aligned}
+\end{equation}
+\noindent Or in Cartesian (x,y,z) and cylindrical coordinates(r,$\theta$,z) respectively:
+
+\begin{equation}
+    \begin{aligned}
+    &\Delta \phi = \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} + \frac{\partial^2 \phi}{\partial z^2}\\
+    &\Delta \phi= \frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial \phi}{\partial r}\right) + \frac{1}{r}\frac{\partial^2 \phi}{\partial \theta^2} + \frac{\partial^2 \phi}{\partial z^2}
+    \end{aligned}
+\end{equation}
+
+\noindent With these it can be concluded that the potential $\phi$ outside of a uniformly charged sphere where $\rho(\textbf{r}) = 0$ is $\phi = - \frac{constant}{r}$
+
+
+\section{Dirac's Delta Distribution}
+The delta function is an approximate impulse. It is called a function but in reality it is a distribution, defined as a functional by the following property
+\begin{equation}
+    f(a) =  \int_{-\infty}^\infty f(x)\delta(x-a)dx
+\end{equation}
+The quantity $\delta(x)$ can be represented as
+\begin{equation}
+    \delta (x) = \lim_{x\to 0} \frac{1}{2\sqrt{\pi a}}e^{\frac{x^2}{4a}}
+\end{equation}
+Which entails that $\delta(x)$ is infinity for x = 0 and 0 otherwise. The following are key properties of the delta function.
+\begin{itemize}
+    \item $\delta(x) = \delta(-x)$
+    \item $\delta'(x) = - \delta'(-x)$
+    \item $x\delta(x) = 0$
+    \item $x\delta'(x) = -\delta(x)$
+    \item $\delta(ax) = \frac{1}{a} \delta(x)$
+\end{itemize} \\
+\\
+\noindent When it holds that $\delta(\textbf{r}) = \delta(x)\delta(y)\delta(z)$ a solution to $\Delta G(\textbf{r}) = \delta(\textbf{r}) $ is called Green's Function. When $G(\textbf{r})$ is known, the inhomogenious solution of the Poisson equation $\phi(\textbf{r})$ of $\Delta\phi = -4k\pi \rho$ follows from the relation as shown here:
+
+\begin{equation}
+    \phi(r) = -k \int G(\textbf{r}-\textbf{r}')4\pi \rho d \textbf{r}'
+    \label{2.5 Dirac relation}
+\end{equation}
+
+\noindent This holds as the Laplacian ($\Delta = \nabla^2$) of this relation yields:
+
+\begin{equation}
+    \Delta \phi(\textbf{r}) = -k\int \delta(\textbf{r}-\textbf{r}') 4\pi \rho(\textbf{r}') d\textbf{r}' = -4k\pi\rho(\textbf{r})
+\end{equation}
+
+For $\phi(\textbf{r}) = k \int \frac{\rho(\textbf{r}')d\textbf{r}'}{|\textbf{r}-\textbf{r}'|}$ to satisfy equation \ref{2.5 Dirac relation} the following must hold:
+
+\begin{equation}
+    \begin{aligned}
+    &G(\textbf{r}-\textbf{r}') = -\frac{1}{4\pi |\textbf{r}-\textbf{r}'|}\\
+    &\text{Or in other words}\\
+    &\Delta_{\textbf{r}} = -4\pi \delta(\textbf{r})
+    \end{aligned}
+    \label{2.5 poisson}
+\end{equation}
+Which makes sense for $\textbf{r} \neq 0$ which after the following:
+
+\begin{equation}
+\begin{array}{c}
+r=\sqrt{x^{2}+y^{2}+z^{2}}, \quad \triangle=\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}+\frac{\partial^{2}}{\partial z^{2}} \\
+
+\frac{\partial}{\partial x}\left(\frac{1}{r}\right)=-\frac{x}{r^{3}}, \quad \frac{\partial^{2}}{\partial x^{2}}\left(\frac{1}{r}\right)=-\frac{1}{r^{3}}+\frac{3 x^{2}}{r^{5}}\\
+
+\triangle \frac{1}{r}=-\frac{3}{r^{3}}+\frac{3 r^{2}}{r^{5}}=0
+\end{array}
+\end{equation}
+Can be integrated in the following relation:
+\begin{equation}
+    \begin{aligned}
+    &\int_V \Delta_\textbf{r} \frac{1}{\textbf{r}}d \textbf{r} = \int_V \nabla \cdot (\nabla\frac{1}{r})d\textbf{r} = \int_F (\nabla \frac{1}{r}) \cdot d\textbf{F}\\
+   & = -\int_F \frac{\textbf{r}}{r^3}\cdot d \textbf{F} = -\int \frac{dF}{r^2}= -\int d\Omega = -4\pi\\
+   \end{aligned} 
+\end{equation}
+
+\noindent This then verifies \ref{2.5 poisson} holds and then shows that the Green's function is the potential of a negative unit point charge multiplied with $\epsilon_0$.
+\begin{equation}
+    \rho(\textbf{r}') = -\epsilon_0 \delta(\textbf{r}')
+\end{equation}
+When this is kept in mind the equation for the electrostatic potential is:
+\begin{equation}
+    \phi(\textbf{r})= -k \int G(\textbf{r}-\textbf{r}')4 \pi \rho(\textbf{r}') d \textbf{r}' = G(\textbf{r})
+\end{equation}
+\subsection{Potential Energy of Charges}
+When a charge q is moved from A to B against the field \textbf{E} the work done can be described as follows:
+\begin{equation}
+    W = - \int_A^B q\textbf{E(r)} \cdot d\textbf{r} = q\int_A^B \nabla\phi \cdot d\textbf{r} =  q\int_A^B d\phi 
+\end{equation}
