@@ -123,7 +123,7 @@ Can be integrated in the following relation:
    \end{aligned} 
 \end{equation}
 
-\noindent This then verifies \ref{2.5poisson} holds and then shows that the Green's function is the potential of a negative unit point charge multiplied with $\epsilon_0$.
+\noindent This then verifies \ref{2.5poisson} and then shows that the Green's function is the potential of a negative unit point charge multiplied with $\epsilon_0$.
 \begin{equation}
     \rho(\textbf{r}') = -\epsilon_0 \delta(\textbf{r}')
 \end{equation}
@@ -136,8 +136,33 @@ When a charge q is moved from A to B against the field \textbf{E} the work done 
 \begin{equation}
     \begin{aligned}
         W &= - \int_A^B q\textbf{E(r)} \cdot d\textbf{r} = q\int_A^B \nabla\phi \cdot d\textbf{r} =  q\int_A^B d\phi \\    
-          &= q(*\phi(B)-\phi(A))\\
+          &= q(\phi(B)-\phi(A))\\
     \end{aligned}
 \end{equation}
 
-\noindent The minus sign infront of the integral represents the opposing force against the electricfield \textbf{E} 
+\noindent The minus sign infront of the integral represents the opposing force against the electricfield \textbf{E}. Consequently, as the path from A to B does not matter the field
+is path-independent. As such $q\textbf{E}$ is a conservative field which implies again that $\nabla \times \textbf{E} = 0$.
+
+\section{The Electric Field at Charged Surfaces}
+Allready well known. It contains the following:
+
+\begin{itemize}
+    \item Charge per unit area ($\sigma (\textbf{r})$).
+    \item Field duality on both sides of a charged plate ($2E = 4\pi k \sigma or E = \frac{\sigma}{2 \epsilon_0}$ for both sides)
+    \begin{itemize}
+        \item Which comes from $(\mathbf{E_{2}} - \mathbf{E_{1}}) \cdot \mathbf{n} = 4 k \pi \sigma (\mathbf{r}) $
+        \item This holds for an infinitesimally thin plate
+    \end{itemize}
+\end{itemize}
+
+\section{Examples}
+This section contains the names of the examples (regarding condensers) used in the book:
+\begin{itemize}
+    \item The Parallel Plate condenser or capacitor (also as introduction to the dipole)
+    \item The spherical condenser (Charge on inner side and outter side of shell, determination of capacitance)
+    \item The van den Graaff generator (Calculating when sparks occur)
+    \item The cylindrical condenser (Finding C of a cylinder of $r_1,r_2$, no negligeable thickness with charges in and outside)
+    \item The dipole (Finding the dipole moment and potential of it in space)
+\end{itemize}
+
+\section{Conductiors and Electrical Screening}
