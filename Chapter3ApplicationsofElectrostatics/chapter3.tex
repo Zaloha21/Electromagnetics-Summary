@@ -1,0 +1,203 @@
+\chapter{Applications of Electrostatics}
+\section{Introductory Remarks}
+In this chapter applications of electrostatics are discussed. In specific methods of calculating more difficult applications.
+Greens theorem and Fourier transforms are introduced and the multipole expansion of the potential of a charge distribution is derived.
+\section{Method I: The Gauss Law}
+The problems we considered thus far were mostly treated with the help of the integral form of the Gauss law:
+\begin{equation}
+    \int \textbf{E} \cdot d\textbf{F} = 4\pi k \sum_i q_i
+\end{equation}
+Now, different metods are investigated.
+\section{Method II: Poisson and Laplace Equations}
+In chapter 2 we encountered the poisson equation as follows:
+\begin{equation}
+    \nabla^2\phi =-4\pi k \rho, \quad k = \frac{1}{4\pi \epsilon_0}
+\end{equation}
+To solve this boundary conditons are needed. These are the following two:
+\begin{enumerate}
+    \item $\phi =$ constant on conducting surfaces (as in an ideal conductor, electrons do not preform work) with the discontinuity for the derivatives
+     as for the field strength are
+     \begin{equation}
+        \label{eq:pois&lapl-potential}
+         -\left(\frac{\partial\phi}{\partial n}\right)_1 +\left(\frac{\partial\phi}{\partial n}\right)_2 = 4\pi k \sigma
+     \end{equation}
+     \item Otherwise $\phi$ is continuous. This is no contradiction with the difference of potential on both sides of a dipole layer; the potential of dipole \textbf{p} is $\textbf{p} \cdot \frac{\textbf{r}}{r^3})$ 
+     which is continuous in \textbf{r}, without stepfunctions. If this were the case, at the point where $u(x-x_0)$ happens, $\textbf{E} = -\nabla \phi$ would be proportional with
+     $\delta(x-x_0)$ which would be infinite.
+\end{enumerate}
+Then some examples are given:
+\begin{itemize}
+    \item The cylindrical condenser
+    \begin{itemize}
+        \item Finding a potential difference of a cylindrical condenser of height h
+    \end{itemize}
+    \item The proportional counter
+\end{itemize}
+\section{Method III: Direct Integration}
+With this method one integrates either vectorially, as in:
+\begin{equation}
+    \textbf{E} = k\int \frac{\textbf{r}dq}{r^3}, \quad dq = \rho dV \text{ or } \sigma ds
+\end{equation}
+or scalarly as in the formula:
+\begin{equation}
+    \phi = k \int \frac{dq}{r}, \quad dq = \rho dV  \text{ or } \sigma ds
+\end{equation}
+In the latter case the integral is evaluated by ntegrating over a charged surface S, and \textbf{r} is the vector from the element of area ds to the point P at which the potential is to be determined.
+Some examples are then given.
+\begin{itemize}
+    \item The finite charged thin rod
+    \begin{itemize}
+        \item The field strength calculated at a distance r of a charged infinitesimally thin rod
+    \end{itemize}
+\end{itemize}
+\section{Method IV: Kelvin Method of Image Charge}
+In electrostatic problems the potental can determine quantities such as \textbf{E} and $\sigma$. For this reason it is possible to imagine certain potential distributions replaced by fictitious charges called "image charges"
+and calculate the field of these (e.g. a potential compared to ground where potential $\phi = 0$ can be mimicked when the earthed connection is instead an opposite charge). The earthed conductor implies another boundary condition.
+Namely that $\phi = 0 = \phi(r = \infty)$. The field \textbf{E} then results as the effect of both charges, +q and -q, in the region above the conductor. This opens up new methods of calculation (practical usage in finding E in particle accelerators) which are shown in the following examples:
+\begin{itemize}
+    \item The oscillating charge
+    \begin{itemize}
+        \item finding the period of oscillating charges q, that move in a pendelum like way
+    \end{itemize}
+\end{itemize}
+A comment on physics.stackexchange.com, by Abhjeet Melkani, explains the usage of a image charge very well.
+
+\begin{tcolorbox}[title = Explaination of why to use image charges]
+    The Laplacian equations for electrostatics are such that if you have to find out the electric field (or potential) at any point in a volume, such that you are given the charge distribution in the volume and the boundary conditions on the surface of the volume (the potential at the surface), you are guaranteed to get a unique solution.\\
+    \\
+    \noindent Thus, no matter what the situation is outside the volume if the boundary conditions are the same your answer for inside the volume would be same.\\
+    \\
+    \noindent This is the principle due to which the method of images works:\\
+    \\
+    \noindent For your example, the volume that we are interested in is the volume to that side of the plane sheet which contains the "real charge". You have been asked to calculate the potential at some point on this volume. Now, you know that the electric field at the boundary is perpendicular and the potential is zero. Can you come up with a different setup for the other side of the volume for which these boundary conditions remain unchanged?\\
+    \\
+    \noindent Yes! Replace the conductor with a charge(of equal magnitude but opposite nature) placed just opposite the "real" charge. If you draw the electric field diagrams you will see that the field is perpendicular all over the plane where the conductor was lying. Also, the potential is zero there. So, the solution you get for this configuration is the same unique solution you would have got for the conductor situation.\\
+    \\
+    \noindent Remember, you have to replace the conductor with the virtual charge not just add the virtual charge to the initial settings.
+    \tcblower
+    By Abhijeet Melkani, https://physics.stackexchange.com/q/332713
+\end{tcolorbox}
+
+
+
+\section{Theoretical Aspects of Image Charges}
+\subsection{The Induced Charge}
+When using an image charge the most important property is that the potential at the surface of the conductor will be 0. To mimick this effect the location of the image charge is very important.
+For example, in the case of a sphere, where would one place the fictional charge $-\mu q$ on the interior to obtain a surface potential of 0?\\
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{images/text1008.png}
+    \caption{Earthed spherical shell}
+\end{figure}
+
+\noindent In order for the potential to be 0 on the shell, the following must hold
+\begin{equation}
+    0 = \frac{q}{r_1} - \frac{\mu q}{r_2}
+\end{equation}
+From geometry the following two relations hold:
+\begin{equation}
+    \begin{array}{l}
+    r_{1}^{2}=d^{2}+a^{2}-2 a d \cos \theta=d^{2}\left(1+\frac{a^{2}}{d^{2}}-2 \frac{a}{d} \cos \theta\right) \\
+    r_{2}^{2}=a^{2}+\nu^{2}-2 a \nu \cos \theta=a^{2}\left(1+\frac{\nu^{2}}{a^{2}}-2 \frac{\nu}{a} \cos \theta\right)
+    \end{array}
+\end{equation}
+
+\noindent $r_2$ is the proportional to $r_1$ if $\displaystyle v = \frac{a^2}{d}$. It can then be said that $\displaystyle r_2 = \frac{ar_1}{d} \text{ or } \mu = \frac{a}{d}$.
+In other words the fictitious charge $\displaystyle \frac{-aq}{d}$ has to be placed at a point, called the "image point", at a distance of $\displaystyle \frac{a^2}{d}$ away from the middle of the shell.
+This way $\phi = 0 $ at the surface of the shell.\\
+\\
+\noindent For potential $\phi(\textbf{r})$ at point $P(r')$ outside of the sphere it holds that:
+\begin{equation}
+    \textbf{E} = -\nabla \phi \neq 0
+\end{equation}
+\noindent So to obtain the potential at a point $P(r')$ the following must hold.
+\begin{equation}
+    \begin{aligned}
+    4 \pi \epsilon_{0} \phi(\mathbf{r}) & = \left(\frac{q}{|\mathbf{r}-\mathbf{d}|}-\frac{q a}{d|\mathbf{r}-\nu|}\right) \\
+    & = \stackrel{r \geq a}{\left(r^{2}+d^{2}-2 r d \cos \gamma\right)^{1 / 2}}-\frac{a q}{d\left(r^{2}+\nu^{2}-2 r \nu \cos \gamma\right)^{1 / 2}}
+    \end{aligned}
+\end{equation}
+To calculate the field strength one can differentiate the potential as done in \ref{eq:pois&lapl-potential}.\\
+\\
+\noindent This allows us to compute the surface charge density $\sigma$. This charge is called the induced charge and follow from the fact that the carge outside repels charges of the same polarity inside the conductor, while attracting charge of the opposite.\\
+\\
+\noindent To obtain this induced charge the following formula is used
+\begin{equation}
+    Q = \int_S \sigma(\gamma)a^2 d\Omega \quad d\Omega = 2\pi d cos(\gamma)
+\end{equation}
+Which is an integral over a circular annulus about the horizontal axis as shown in figure 3.1 at angular height $\gamma$, infinitesimal width ($ad\gamma$) and area $(ad\gamma)2\pi sin(\gamma)$.
+The book then proceeds to state that surface charge can be calculated by using the following equation:
+
+\begin{equation}
+    -\left.\frac{1}{4 \pi} \frac{\partial \phi}{\partial n}\right|_{r=a}=-\left.\frac{1}{4 \pi} \frac{\partial \phi}{\partial r}\right|_{r=a}=k \sigma
+\end{equation}
+After a long calculation it can then be concluded that this charge Q would have the following relationship:
+\begin{equation}
+    Q =-q\frac{a}{d}
+\end{equation}
+It can thus be said that a fictitious charge $Q$ placed at $v$ has the same effect as induced charge on the surface of a conductor by $+q$.
+After this statement an example is given about spherical shell hanging in a gravitational field. In this example a conducting shell is held from a spring. A charge is located at the base of the spring and a equation of the spring displacement is calculated.
+
+\subsection{Green's Theorems}
+When one has the equation of the potential as shown here:
+
+\begin{equation}
+    \phi(\textbf{r}) = k \int_V \frac{\rho(\textbf{r}')}{|\textbf{r}-\textbf{r'}|}d\textbf{r}'
+    \label{eq:potential}
+\end{equation}
+
+\noindent $\phi(\textbf{r})$ can be calculated given a $\rho(\textbf{r})$. Often one encounters a problem: $\phi(\textbf{r})$ is known on certain surfaces ,boundary conditions supplementing the Poisson Equation are given, but not $\rho(\textbf{r})$. This is a problem as it is needed to obtain, for example, \textbf{E}.
+The solutions of these boundary problems are simplified with help of  Green's Theorems (or identities). \\
+\\
+\noindent The theorems used in the simplification are as follows:
+
+\begin{equation}
+    \int_{V}[\varphi \Delta \psi+(\nabla \varphi) \cdot(\nabla \psi)] d V=\int_{F} \varphi(\nabla \psi) \cdot d \mathbf{F}
+\end{equation}
+and
+\begin{equation}
+    \int_{V}[\varphi \Delta \psi-\psi \Delta \varphi] d V=\int_{F}[\varphi \nabla \psi-\psi \nabla \varphi] \cdot d \mathbf{F}
+\end{equation}
+Where V is a volume and F is a surface. (The book verifies these identities, here this is omitted.) These identities will be used where
+e.g. $ \displaystyle \psi = \frac{1}{|\textbf{r}-\textbf{r}'|} \quad \varphi = \phi)$ 
+\\
+\noindent When the above holds the following does too:
+\begin{equation}
+    \Delta \psi = \Delta_r \frac{1}{|\textbf{r}-\textbf{r'}|} = -4\pi \delta(\textbf{r}-\textbf{r}'), \quad \Delta \varphi = \Delta \phi(\textbf{r}) = -4\pi k \rho(\textbf{r}).
+\end{equation}
+The second of Greens theorems then implies:
+\begin{equation}
+    -4 \pi \int_{V} \phi\left(\mathbf{r}^{\prime}\right) \delta\left(\mathbf{r}-\mathbf{r}^{\prime}\right) d V^{\prime}+4 k \pi \int_{V} \frac{\rho(\mathbf{r})}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d V^{\prime} =\int_{F}\left[\phi \frac{\partial}{\partial n^{\prime}}\left(\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}\right)-\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} \frac{\partial \phi}{\partial n^{\prime}}\right] d F^{\prime} 
+\end{equation}
+When \textbf{r} is inside of V, the following holds. (remember integral of $f(\textbf{r}')\delta(\textbf{r}- \textbf{r}')$ gives the potential $\phi(\textbf{r})$)
+\begin{equation}
+    \phi(\textbf{r}) = k \int_V \frac{\rho(\textbf{r}')}{|\textbf{r}-\textbf{r}'|} dV' + \frac{1}{4\pi}\int_f \left[\frac{1}{|\textbf{r}-\textbf{r'}|}\frac{\partial \phi}{\partial n'}-\phi\frac{\partial}{\partial n'}\frac{1}{|\textbf{r}-\textbf{r'}|} \right] dF'
+\end{equation}
+When the area of the volume to be integrated is infinite the following can be assumed:
+\begin{equation}
+    \begin{aligned}
+    d F \sim r^{\prime 2} d \Omega, \quad \phi \propto \frac{1}{r}, & \frac{\partial \phi}{\partial \eta} \propto \frac{1}{r^{2}}, \quad \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}} \sim \frac{1}{r^{\prime 3}} \\
+    \frac{d F^{\prime}}{r^{\prime 3}} & \sim \frac{d \Omega}{{r^{\prime}}} \stackrel{r^{\prime}, F^{\prime} \rightarrow \infty}{\longrightarrow} 0
+    \end{aligned}
+\end{equation}
+The right part of equation 3.18 vanishes and we are left with the equation earlier found as shown in equation \ref{eq:potential} .
+However when the volume is \textbf{not} enclosing charges ($\rho = 0$) the following must be taken into account.
+\begin{equation}
+    \left.\phi(\mathbf{r})\right|_{(\mathbf{r} c V)}=\frac{1}{4 \pi} \int_{F}\left[\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}}-\phi \frac{\partial}{\partial n^{\prime}} \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}\right] d F^{\prime}
+\end{equation}
+This way the potential $\phi$ at $\textbf{r}$ is determined by values and derivatives of $\phi$ on the boundary of F and V. (ASK WHAT THE IMPLICATIONS OF THIS ARE)\\\
+\\
+\noindent The \textit{Dirichlet Boundary Conditions} are conditions which state the potential at the boundary, which is not necessarily 0. 
+The \textit{Neumann Boundary Conditions} specify the the normal derivatives of the potential at the boundary. (Are these initial conditions? check whether EE2M22 will treat this)
+When these conditions are given the potential is uniquely determined. The book then verifies this statement. 
+\subsection{Green's function and image potential}
+Earlier the following relation was given:
+\begin{equation}
+    \nabla^2 \frac{1}{|\textbf{r}-\textbf{r}'|} = -4\pi \delta(\textbf{r}-\textbf{r}')
+\end{equation}
+Which told us that the expression $\displaystyle \frac{1}{|\textbf{r}-\textbf{r}'|}$ is effectively the potential of a point charge at \textbf{r}'.
+This expression is however only one class of functions G for which the equation 3.21 is valid. In general:
+\begin{equation}
+    \Delta_{\textbf{r}} G_{\textbf{r}} = \nabla ^2 G(\textbf{r},\textbf{r}') = -4\pi \delta(\textbf{r}- \textbf{r}')
+\end{equation}

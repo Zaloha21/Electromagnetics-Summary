@@ -166,3 +166,97 @@ This section contains the names of the examples (regarding condensers) used in t
 \end{itemize}
 
 \section{Conductiors and Electrical Screening}
+For a conductor inside of which charges can move freely the field inside vanishes. 
+This means that if a conductor were to be given a charge, the charge is only on the outter surface of the conductor. The surface is an equipotential surface. (this way faraday cages are made)\\
+\\
+\noindent It can thus be said that for a conductor with surface F:
+
+\begin{equation}
+    \int_F \textbf{E} \cdot d\textbf{F} = 0
+\end{equation}
+
+A conductor is earthed if the potential is the same as at $\infty$. The potential equation, obtained from the poisson equation, can be used with the superposition principle to relate charge with potential.
+\begin{equation}
+    \quad q_i = \sum_{j=1}^nC_{ij}\phi_i
+\end{equation}
+Electrical Screening is when one conductor is surrounded by another. This means that a charge enclosed by 2 other conductors is not influenced by outside fields. This happens when the middle conductor
+is earthed (grounded).\\
+\\
+\noindent The section then showcases multiple examples of screening and charges on conductor surfaces. These are as follows:
+\begin{itemize}
+    \item Two hemispherical shells (a charged shell is split in 2, find the force to keep it together)
+    \item Two connected shells (2 charged shells are connected, find how much the energy has lowered on a shell)
+    \item The charges of connected spherical shells (find charge density on surface after connection)
+\end{itemize} 
+
+\section{Energy of charge distributions}
+The potential of a point charge $q_i$ at the point $\textbf{r}_i$ in the field $\scriptstyle \textbf{E} = - \nabla \phi$
+of a point charge $q_k$ at point $\textbf{r}_k$ is the coulomb potential energy. Which is the following:
+\begin{equation}
+    k \frac{q_iq_k}{|\textbf{r}_i-\textbf{r}_k|}, (i \neq k)
+\end{equation}
+The potential of N charges $q_i \quad (1,2,3,...,i)$ and $q_k \quad (1,2,3,...,k)$ is correspondingly
+\begin{equation}
+    W = \frac{1}{2}\sum_i\sum_{k\neq i}\frac{q_iq_k}{|\textbf{r}_i-\textbf{r}_k|}
+\end{equation}
+In the case of a continuous charge distribution $\rho(\textbf{r})$ the following relation holds:
+
+\begin{equation}
+    \begin{aligned}
+        &W =  \frac{1}{2}k \int dV\int dV'\frac{\rho(\textbf{r})\rho(\textbf{r}')}{|\textbf{r}-\textbf{r}'|} \\
+        &\quad = \frac{1}{2}\int dV \rho(\textbf{r})\phi(\textbf{r}) \text{, Joules} \\
+        &\phi(\textbf{r}) = k\int  dV'\frac{\rho(\textbf{r})\rho(\textbf{r}')}{|\textbf{r}-\textbf{r}'|} \text{, Volts}\\ 
+    \end{aligned}
+\end{equation}
+
+In the case of surface charges the following can be used for a surface F:
+\begin{equation}
+    W=\frac{1}{2} k \int_{F} d F(\mathbf{r}) \int_{F} d F\left(\mathbf{r}^{\prime}\right) \frac{\sigma(\mathbf{r}) \sigma\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}
+\end{equation}
+For when F consists out of 2 condenser plates with area $F_1$ and $F_2$ W can also be expressed in terms of \textbf{E}.\\
+\\
+\noindent Recall that
+\begin{equation}
+     \nabla^2 \phi = \triangle\phi = -4k\rho(\textbf{r})
+\end{equation}
+with equation (2.25) becomes
+\begin{equation}
+    W = - \frac{1}{8k} \int \phi \nabla^2 \phi dV
+\end{equation}
+However, it holds that
+\begin{equation}
+    \nabla \cdot (\phi \nabla \phi) = \phi \triangle \phi + (\nabla\phi)^2
+\end{equation}
+so that
+\begin{equation}
+    W=-\frac{1}{8 \pi k} \int d V\left[\nabla \cdot\{\phi(\nabla \phi)\}-(\nabla \phi)^{2}\right]
+\end{equation}
+which by Gauss' divergence theorem turns into 
+\begin{equation}
+    \int dV \nabla \cdot (\phi \nabla \phi) = \int d\textbf{F} \cdot (\phi \nabla \phi)
+\end{equation}
+
+\noindent Now it is known that $\phi \sim 1\frac{1}{r},\nabla\phi \sim \frac{1}{r^2}$. When integrating over an infinitely large surface (i.e. where $r \rightarrow \infty$)
+the integral vanishes, as $dF \propto r^2 d\Omega$. So when $r \rightarrow \infty$ it follows that (as $\textbf{E} = -\nabla \phi$):
+
+\begin{equation}
+    W = \frac{1}{8\pi k} \int_{V_\infty} dV \textbf{E}^2 
+\end{equation}
+Or as earlier learnt $\displaystyle W = \frac{\textbf{E}^2}{8\pi k} = \frac{1}{2}\epsilon_0 \textbf{E}^2 $.\\
+\\
+Again more examples are given:
+\begin{itemize}
+    \item The gravitational Potential
+    \begin{itemize}
+        \item Finding the needed mass density equivalent to the energy density of the field of a charge to find the mass density of a charge. 
+    \end{itemize}
+    \item Energy of the spherical condenser
+    \begin{itemize}
+        \item Find the electrostatic potential/energy of a spherical condenser.
+    \end{itemize}
+    \item A charged particle inside a charge density
+    \item A multivalued potential
+    \begin{itemize}
+        \item Finding the equipotential surfaces of the potential $\phi = tan^{-1}(\frac{x}{y})$
+    \end{itemize}
+\end{itemize}
