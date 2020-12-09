@@ -180,6 +180,7 @@ When the area of the volume to be integrated is infinite the following can be as
     d F \sim r^{\prime 2} d \Omega, \quad \phi \propto \frac{1}{r}, & \frac{\partial \phi}{\partial \eta} \propto \frac{1}{r^{2}}, \quad \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}} \sim \frac{1}{r^{\prime 3}} \\
     \frac{d F^{\prime}}{r^{\prime 3}} & \sim \frac{d \Omega}{{r^{\prime}}} \stackrel{r^{\prime}, F^{\prime} \rightarrow \infty}{\longrightarrow} 0
     \end{aligned}
+    \label{eq:potential_extended}
 \end{equation}
 The right part of equation 3.18 vanishes and we are left with the equation earlier found as shown in equation \ref{eq:potential} .
 However when the volume is \textbf{not} enclosing charges ($\rho = 0$) the following must be taken into account.
@@ -201,3 +202,20 @@ This expression is however only one class of functions G for which the equation 
 \begin{equation}
     \Delta_{\textbf{r}} G_{\textbf{r}} = \nabla ^2 G(\textbf{r},\textbf{r}') = -4\pi \delta(\textbf{r}- \textbf{r}')
 \end{equation}
+
+It can then be stated that (WHAT STEPS ARE BEING TAKEN?)
+\begin{equation}
+    G(\textbf{r},\textbf{r}') = \frac{1}{|\textbf{r}-\textbf{r}'|} + F(\textbf{r},\textbf{r}'), \text{ where } \Delta_r F(\textbf{r},\textbf{r}') = 0
+\end{equation}
+F is called the image potential. Solutions of the equation $\displaystyle \Delta F = 0$ (Recall from analysis 2: Laplace equation) are known as harmonic functions. 
+Earlier equation \ref{eq:potential_extended} is a general equation for the electrostatic potential. In order to obtain an expression which takes also the image potential in account, the following steps are taken.
+Firstly Green's second identity is used in where $\varphi = \phi$ and $\psi = G(\textbf{r},\textbf{r}')$. 
+In much the same way as \ref{eq:potential_extended} was obtained, the following expression of the potential is obtained:
+\begin{equation}
+    \begin{aligned}
+    \phi(\mathbf{r})=& k \int_{V} \rho\left(\mathbf{r}^{\prime}\right) G\left(\mathbf{r}, \mathbf{r}^{\prime}\right) d V^{\prime} \\
+    &+\frac{1}{4 \pi} \int_{F(V)}\left[G\left(\mathbf{r}, \mathbf{r}^{\prime}\right) \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}}-\phi\left(\mathbf{r}^{\prime}\right) \frac{\partial G\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{\partial n^{\prime}}\right] d F^{\prime}
+    \end{aligned}
+\end{equation}
+As $\Delta G(\textbf{r},\textbf{r}') = -4\pi \delta( \textbf{r},\textbf{r'} ) \quad , \textbf{r} \in V \quad , \Delta \phi = -4k\pi \rho $ , this expression still involves both $\phi(F)$ and $\displaystyle \left(\frac{\partial \phi}{\partial n} \right)_F$. (The potential on the boundary and its normal derivative at the boundary)
+With a "suiteable choice" of G(\textbf{r},\textbf{r'}) i.e. F(\textbf{r},\textbf{r'}), one or the other surface integral can be eliminated so that an expression for $\phi(\textbf{r})$ results with either Dirichlet or Neuman Boundary conditions. 
