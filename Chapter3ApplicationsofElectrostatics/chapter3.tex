@@ -170,7 +170,7 @@ The second of Greens theorems then implies:
 \begin{equation}
     -4 \pi \int_{V} \phi\left(\mathbf{r}^{\prime}\right) \delta\left(\mathbf{r}-\mathbf{r}^{\prime}\right) d V^{\prime}+4 k \pi \int_{V} \frac{\rho(\mathbf{r})}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d V^{\prime} =\int_{F}\left[\phi \frac{\partial}{\partial n^{\prime}}\left(\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}\right)-\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} \frac{\partial \phi}{\partial n^{\prime}}\right] d F^{\prime} 
 \end{equation}
-When \textbf{r} is inside of V, the following holds. (remember integral of $f(\textbf{r}')\delta(\textbf{r}- \textbf{r}')$ gives the potential $\phi(\textbf{r})$)
+When \textbf{r} is inside of V, the following holds. (remember integral of $\phi(\textbf{r}')\delta(\textbf{r}- \textbf{r}')$ gives the potential $\phi(\textbf{r})$)
 \begin{equation}
     \phi(\textbf{r}) = k \int_V \frac{\rho(\textbf{r}')}{|\textbf{r}-\textbf{r}'|} dV' + \frac{1}{4\pi}\int_f \left[\frac{1}{|\textbf{r}-\textbf{r'}|}\frac{\partial \phi}{\partial n'}-\phi\frac{\partial}{\partial n'}\frac{1}{|\textbf{r}-\textbf{r'}|} \right] dF'
 \end{equation}
@@ -202,7 +202,6 @@ This expression is however only one class of functions G for which the equation 
 \begin{equation}
     \Delta_{\textbf{r}} G_{\textbf{r}} = \nabla ^2 G(\textbf{r},\textbf{r}') = -4\pi \delta(\textbf{r}- \textbf{r}')
 \end{equation}
-
 It can then be stated that (WHAT STEPS ARE BEING TAKEN?)
 \begin{equation}
     G(\textbf{r},\textbf{r}') = \frac{1}{|\textbf{r}-\textbf{r}'|} + F(\textbf{r},\textbf{r}'), \text{ where } \Delta_r F(\textbf{r},\textbf{r}') = 0
@@ -218,4 +217,49 @@ In much the same way as \ref{eq:potential_extended} was obtained, the following 
     \end{aligned}
 \end{equation}
 As $\Delta G(\textbf{r},\textbf{r}') = -4\pi \delta( \textbf{r},\textbf{r'} ) \quad , \textbf{r} \in V \quad , \Delta \phi = -4k\pi \rho $ , this expression still involves both $\phi(F)$ and $\displaystyle \left(\frac{\partial \phi}{\partial n} \right)_F$. (The potential on the boundary and its normal derivative at the boundary)
-With a "suiteable choice" of G(\textbf{r},\textbf{r'}) i.e. F(\textbf{r},\textbf{r'}), one or the other surface integral can be eliminated so that an expression for $\phi(\textbf{r})$ results with either Dirichlet or Neuman Boundary conditions. 
+With a "suiteable choice" of G(\textbf{r},\textbf{r'}) i.e. F(\textbf{r},\textbf{r'}), one or the other surface integral can be eliminated so that an expression for $\phi(\textbf{r})$ results with either Dirichlet or Neuman Boundary conditions. \\
+
+\begin{tcolorbox}[title = Boundary conditions]
+    \textbf{Dirichlet boundary conditions}\\
+    The Dirichlet boundary condition on $\varphi$ is usually imposed on the boundary sections of the conductive domain; in the case of wires, the values on one section are normally set to zero, while a fixed value of the electric potential is fixed on the second section. The conditions on A usually constrain the magnetic field to be tangent to the external boundary, i.e. to have all the magnetic lines inside the computational domain.\\
+    \\
+    \textbf{Neumann boundary conditions}\\
+    In electromagnetic modeling, under certain hypotheses, $\nabla\varphi$ is the electric current density. The imposition of a homogeneous Neumann boundary condition (i.e.$\nabla\varphi \cdot n =0$) means forcing the electric current to not cross the boundaries. This condition is also referred to as “insulating boundary” and represents the behavior of a perfect insulator.\\
+    \tcblower
+    https://www.simscale.com/docs/simwiki/numerics-background/what-are-boundary-conditions/
+    \end{tcolorbox}
+
+
+\noindent In the case of a Dirichlet Boundary Condition (The boundary has a constant potential) the following is done:
+\begin{equation}
+    G_{D}(\textbf{r},\textbf{r}') \equiv G(\textbf{r},\textbf{r}')\bigg\rvert_{\textbf{r}' on F}  = 0
+\end{equation}
+After taking these conditions into account and substituting the condition the following appears:
+\begin{equation}
+    \begin{aligned}
+        \phi(\textbf{r}) &= k \int_V \rho(\textbf{r}')G_D (\textbf{r},\textbf{r}')dV' - \frac{1}{4\pi} \int_F \phi(\textbf{r}')\frac{\partial G_D (\textbf{r},\textbf{r}') }{\partial'} dF'\\
+                         &= k \int_V \rho(\textbf{r}')G_D (\textbf{r},\textbf{r}')dV', \quad \text{if} \quad \phi(F) =0 \\
+    \end{aligned}
+\end{equation}
+Then the following substitution for G is made
+\begin{equation}
+    G \rightarrow G_{D}(\textbf{r},\textbf{r}') = \frac{1}{|\textbf{r}-\textbf{r}'|} +F(\textbf{r},\textbf{r}')
+\end{equation}
+When filled into the equation of $\phi(\textbf{r})$
+\begin{equation}
+    \begin{aligned}
+    \left.\phi(\mathbf{r})\right|_{(\mathbf{r} c V)}=& k \int_{V} \rho\left(\mathbf{r}^{\prime}\right)\left\{\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}+F\left(\mathbf{r}, \mathbf{r}^{\prime}\right)\right\} d V^{\prime} \\
+    &+\frac{1}{4 \pi} \int_{F}\left[\left\{\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}+F\left(\mathbf{r}, \mathbf{r}^{\prime}\right)\right\} \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}}\right.\\
+    &\left.-\phi\left(\mathbf{r}^{\prime}\right) \frac{\partial}{\partial n^{\prime}}\left\{\frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}+F\left(\mathbf{r}, \mathbf{r}^{\prime}\right)\right\}\right] d F^{\prime}
+    \end{aligned}
+\end{equation}
+and using equation \ref{eq:potential_extended} this equation becomes
+\begin{equation}
+    0=k \int_{V} \rho\left(\mathrm{r}^{\prime}\right) F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) d V^{\prime}+\frac{1}{4 \pi} \int_{F}\left[F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}}-\phi\left(\mathbf{r}^{\prime}\right) \frac{\partial F\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{\partial n^{\prime}}\right] d F^{\prime}
+\end{equation}
+This equation represents a relation between the image potential F and the boundary conditions.
+If the Dirichlet condition holds ($\phi(\textbf{r})$ at the border of V) the equation simplifies to:
+\begin{equation}
+    0=k \int_{V} \rho\left(\mathrm{r}^{\prime}\right) F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) d V^{\prime}+\frac{1}{4 \pi} \int_{F}\left[F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}}-\phi\left(\mathbf{r}^{\prime}\right) \frac{\partial F\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{\partial n^{\prime}}\right] d F^{\prime}
+    \end{equation}
+    
