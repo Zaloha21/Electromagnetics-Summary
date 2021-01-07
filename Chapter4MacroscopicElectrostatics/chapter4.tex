@@ -1,0 +1,149 @@
+\chapter{Macroscopic Electrostatics}
+\section{Introductory Remarks}
+In this chapter previous considerations are extended to dielectric media, or insulators.
+These differ from conductors as in these media no charge can be brought into motion by a potential gradient ($\textbf{E}$).
+Using this property polarization of these media and macroscopic effects are taken in consideration. Additionally a concept called dielectric displacement $\textbf{D}$ is introduced.
+
+\section{Dielectrics and Dielectric Displacement}
+Untill now only point charges have been discussed. (for which the following equations hold)
+\begin{equation}
+    \nabla \cdot E = 4k\pi\rho, \quad \nabla \times E = 0, \quad k = \frac{1}{4\pi \epsilon}
+\end{equation}
+In macroscopic dimensions volumes can be described by a lot of charge carrying particles in microscopic motion. In the case of macroscopic electrostatics only cases which are macroscopically static are observed. 
+This means that microscopic fluctuations in space and time average out such that no effect is seen macroscopically.
+In this case averages are taken of the electric field and charge distribution of a volume.\\
+\\
+\noindent When such a volume is placed inside of an external electric field (with unit vector $\hat{x}$), the charges within the volume will move away from eachother. (q- to the external fields source and q+ away)
+Now there is a seperation between charges which in turn creates an internal opposing electric field. The external field is now polarized. As such the following can be said about the average polarized field inside the volume  
+\begin{equation}
+    \vec{E}_{\text {tot}}^{\text {ave}}=\vec{E}_{\text {ext}}+\vec{E}_{p}^{\text {ave}}=E_{\text {ext}}\left(1+\frac{E_{p}^{\text {ave}}}{E_{\text {ext}}}\right) \hat{x}=\frac{E_{\text {ext}}}{\epsilon_{\boldsymbol{r}}} \bar{x}
+\end{equation}
+where $\displaystyle \epsilon_r = \frac{E_{ext}}{E_{ext}+E_p^{ave}}>1 $ is the relative dielectric constant, which is the ratio between averaged internal and external fields. It can then be simplified to:
+\begin{equation}
+    \vec{E}_{t o t}^{a v e}=\frac{E_{e x t}}{\epsilon_{r}} \hat{x}=\frac{q}{4 \pi\left(\epsilon_{0} \epsilon_{r}\right) r^{2}} \hat{x}
+\end{equation}
+The book however does it as follows. \\
+\\
+It states that in macroscopic terms the Electric field and charge distribution are means. 
+By taking into account the polarization of the material (in their case a molecule)  the following relation will hold for $\textbf{E}$ at a point $\textbf{r}$ outside of the volume containing n molecules.
+
+\begin{equation}
+    \textbf{E}(\textbf{r}) = -\nabla \sum_{j=1}^n \left[ \frac{kq_j}{|\textbf{r}-\textbf{r}_j|} +k \textbf{p}_j \cdot \nabla_j \frac{1}{|\textbf{r}-\textbf{r}_j|} \right]
+\end{equation}
+because the following is also true
+\begin{equation}
+    \frac{\textbf{r}-\textbf{r}'}{|\textbf{r}-\textbf{r}'|^3} = -\nabla_r\frac{1}{|\textbf{r}-\textbf{r}'|} = \nabla_{r'} \frac{1}{|\textbf{r}'-\textbf{r}|}
+\end{equation}
+This can be interpreted as follows: Given a charge distribution with corresponding dipole moment (e.g. polar molecules) $\textbf{E}(\textbf{r})$ is the field strength produced by these.
+Additionally it can be interpreted like this: Given electrically neutal atoms, placed inside of an external field, the external field produces the polarization with induced charges and dipole moments $\textbf{p}_j$ of the molecules.\\
+\\
+\noindent By saying that the molecules can be described as integrated delta functions, eq. (4.5) can be rewritten as follows:
+\begin{equation}
+    \mathbf{E}(\mathbf{r})=-\nabla \sum_{j} \int d V^{\prime \prime}\left[\frac{k q_{j} \delta\left(\mathbf{r}_{j}-\mathbf{r}^{\prime \prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime \prime}\right|}+k \delta\left(\mathbf{r}_{j}-\mathbf{r}^{\prime \prime}\right) \mathbf{p}_{j} \cdot \nabla_{\mathbf{r}^{\prime \prime}} \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime \prime}\right|}\right]
+\end{equation}
+When the volume is integrated over the volume containing the molecules, the electric field will average out.
+\begin{equation}
+    \begin{aligned}
+    (\mathbf{E}(\mathbf{r})\rangle=&-\boldsymbol{\nabla} \int_{V} d \mathbf{s}\left[\frac{1}{|\mathbf{r}-\mathbf{s}|} \frac{1}{V} \int_{V} d V^{\prime} \sum_{j} q_{j} k \delta\left(\mathbf{r}_{j}-\mathbf{s}-\mathbf{r}^{\prime}\right)\right.\\
+    &\left.+\left(\boldsymbol{\nabla}_{s} \frac{1}{|\mathbf{r}-\mathbf{s}|}\right) \frac{k}{V} \int_{V} d V^{\prime} \sum_{j} \mathbf{p}_{j} \delta\left(\mathbf{r}_{j}-\mathbf{s}-\mathbf{r}^{\prime}\right)\right]
+    \end{aligned}
+\end{equation}
+Where these quantities represent the following
+\begin{equation}
+    \begin{aligned}
+    \frac{1}{V} \int_{V} d V^{\prime} \sum_{j} q_{j} \delta\left(\mathbf{r}_{j}-\mathbf{s}-\mathbf{r}^{\prime}\right) & \equiv N(\mathbf{s})\left\langle q_{\mathbf{m} \mathbf{o} 1}(\mathbf{s})\right\rangle \equiv p(\mathbf{s}) \\
+    \frac{1}{V} \int_{V} d V^{\prime} \sum_{j} \mathbf{p}_{j} \delta\left(\mathbf{r}_{j}-\mathbf{s}-\mathbf{r}^{\prime}\right) & \equiv N(\mathbf{s})\left(\mathbf{p}_{\text {mol }}(\mathbf{s})\right\rangle \equiv \mathbf{P}(\mathbf{s})
+    \end{aligned}
+\end{equation}
+with the following definitions;
+\begin{itemize}
+    \item N(\textbf{s}): the number of molecules per unit volume at \textbf{s}
+    \item $\langle q_{mol}(\textbf{s}) \rangle$: average charge per molecule at \textbf{s}
+    \item $\rho (\textbf{s})$: macroscopic charge density at \textbf{s}
+    \item $\textbf{P}(\textbf{s})$: polarisation vector/density (dipole moment per unit volume) at \textbf{s}
+    \item $\langle \textbf{p}_{mol}(\textbf{s}) \rangle  $: average dipole moment per molecule at s
+\end{itemize}
+If $\textbf{s}$ is then replaced by $\textbf{r}'$:
+\begin{equation}
+    \begin{aligned}
+    \mathbf{E}^{*}(\mathbf{r}) \equiv(\mathbf{E}(\mathbf{r})\rangle &=-\nabla_{\mathbf{r}} \int_{V} d V^{\prime}\left[\frac{k \rho\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}+k \mathbf{P}\left(\mathbf{r}^{\prime}\right) \cdot \nabla^{\prime} \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}\right] \\
+    & \equiv-\nabla \phi_{\rho}-\nabla \phi^{P}
+    \end{aligned}
+\end{equation}
+And when $\textbf{r} \neq \textbf{r}'$ the divergence is written as follows:
+\begin{equation}
+    \begin{aligned}
+    \nabla \cdot \mathbf{E}^{*}(\mathbf{r}) &=-\int_{V} d V^{\prime}\left[k \rho\left(\mathbf{r}^{\prime}\right) \nabla^{2} \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}+k \mathbf{P}\left(\mathbf{r}^{\prime}\right) \cdot \nabla^{\prime}\left\{\nabla^{2} \frac{1}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}\right\}\right] \\
+    &=4 \pi \int_{V} d V^{\prime}\left[k \rho\left(\mathbf{r}^{\prime}\right) \delta\left(\mathbf{r}-\mathbf{r}^{\prime}\right)+k \mathbf{P}\left(\mathbf{r}^{\prime}\right) \cdot \nabla^{\prime} \delta\left(\mathbf{r}-\mathbf{r}^{\prime}\right)\right] \\
+    &=4\pi k \rho(\textbf{\textbf{r}})-4\pi k \nabla \cdot \textbf{P}(\textbf{r}) \\
+    &=\frac{1}{\epsilon_0} \left[ \rho(\textbf{r}) - \nabla \cdot \textbf{P}(\textbf{r}) \right]
+    \end{aligned}
+    \end{equation}
+Now we can set $\displaystyle \textbf{D} \equiv \epsilon_0 \textbf{E}^* +\textbf{P}$ which leads to the following:
+\begin{equation}
+    \nabla \cdot \textbf{D} = \rho
+\end{equation}
+Where \textbf{D} is the Dielectric displacement. Note that the polarization charges are not sources of \textbf{D}. And as $\displaystyle \textbf{E}^* = -\nabla$ of something and $curl \nabla = 0$ it follows that:
+\begin{equation}
+    \nabla \times \textbf{E}^* =0
+\end{equation}
+It can be observed that the relations above are the macroscopic equivalents of hte microscopic equations $\displaystyle \nabla \cdot \textbf{E} = 4\pi k \rho \text{ and } \nabla \times \textbf{E} = 0$. It must be noted however that the dimensions of $\textbf{E} \text{ and } \textbf{D}$ do not match. As a consequence the dielectric displacement \textbf{D} is in Coulomb per square meter, instead of per meter.\\
+From  $\displaystyle \textbf{D} \equiv \epsilon_0 \textbf{E}^* +\textbf{P}$ it can be deduced that the polarisation \textbf{P} is measured in units as \textbf{D}.\\
+\\
+\noindent We distinguish between the two ways to see this:
+\begin{itemize}
+    \item{Given a charge distribution in space (like molecules) whose electrostatic potential contains contributions of dipole moments (ignoring multipole moments), then \textbf{E}(\textbf{r}) is the strength of the electric field of this charge distribution     } 
+    \item{Given electrically neutral atoms, which macroscopically from a neutral dielectric, and that these are placed in an external electric field \textbf{E}(\textbf{r}). Then this external field generates the polarization of the dielectric with induced
+     charges or induced dipole moments which are then defined by the contributions of in the above expression for \textbf{E}(\textbf{r}).
+     
+    }
+\end{itemize}
+When one takes a cylinder of which the flat cross sectional surface is regarded as $\Delta F$, charged with Q, the surface charge will be equal to $\sigma_P = Q/\Delta F$. The dipole moment is the 
+charge multiplied wth the distance between them. $\textbf{P}$ is the density of dipole moments. It then holds that 
+\begin{equation}
+    V|\textbf{P}| = Ql = \sigma_P\Delta Fl = \sigma_p V
+\end{equation}
+Which implies that
+\begin{equation}
+    |\textbf{P}| = \sigma_P = \textbf{P}\cdot \textbf{n}
+\end{equation}
+When equation (4.9) is observed again, the following can be deduced:
+\begin{equation}
+        \begin{aligned}
+            \phi^P(\textbf{r}) &= k\int_V dV' \textbf{P}(\textbf{r}') \cdot \nabla' \frac{1}{|\textbf{r}-\textbf{r}'|}\\
+            &= k\int_V dV' \left[\nabla' \cdot \textbf{P}(\textbf{r}')\frac{1}{|\textbf{r}-\textbf{r}'|} -\frac{1}{|\textbf{r}-\textbf{r}'|} \nabla' \cdot \textbf{P}(\textbf{r}') \right]\\
+        \end{aligned}   
+\end{equation}
+And this is equal to the following (as the cylinder is discontinuous on the cross sectional parts its seperately added):
+\begin{equation}
+    \begin{aligned}
+        \phi^P(\textbf{r}) &= k\int_{F'(V)}d \textbf{F}' \cdot \textbf{P}(\textbf{r}')\frac{1}{|\textbf{r}-\textbf{r}'|}- k\int dV' \frac{\nabla \cdot \textbf{P}(\textbf{r}')}{|\textbf{r}-\textbf{r}'|}\\
+        & = \phi^P_\sigma + \phi^P_\rho
+    \end{aligned}
+\end{equation}
+This equation defines the quantities $\phi^P_\sigma + \phi^P_\rho$. Let $\sigma_P$ is the induced charge density per unit area (induced due to polerisation) be defined by:
+\begin{eqnarray}
+    \sigma_p = \textbf{P}(\textbf{r})\cdot \textbf{n}  \quad \frac{C}{m^2}
+\end{eqnarray}
+and we let $\rho_P$ be the similarly induced charge density per unit volume be defined by 
+\begin{equation}
+    \nabla \cdot P = -\rho_p \quad \frac{C}{m^3}
+\end{equation}
+These can also be proven as follows
+
+%https://en.wikipedia.org/wiki/Polarization_density
+\begin{tcolorbox}[every float=\centering, title=Gauss's law for the field of P]
+    \begin{minipage}[t]{0.5\linewidth}
+    \vspace*{0pt}
+    For a given volume V enclosed by surface S, the bound charge $Q_b$.\\
+    \noindent
+    Let surface area S envelope a part of a dielectric. Upon polarization negative and positive bound charges are displaced. let $d_1$ and $d_2$ be the distances between the bound charges $d_{q^-_b}$ and $d_{q^+_b}$,
+    respectively from the plane formed by the element dA after polerization. And let $dV_1$ and $dV_2$ be the volumes enclosed by dA.
+
+    \end{minipage}\hfill%
+    \begin{minipage}[t]{0.4\linewidth}
+    \vspace*{0pt}
+        \includegraphics[height=0.6\textheight,width=\linewidth]{Chapter4MacroscopicElectrostatics/pics/surfaceint.jpg}
+    \end{minipage}
+\end{tcolorbox}
+%https://en.wikipedia.org/wiki/Polarization_density

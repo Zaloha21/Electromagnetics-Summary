@@ -262,4 +262,314 @@ If the Dirichlet condition holds ($\phi(\textbf{r})$ at the border of V) the equ
 \begin{equation}
     0=k \int_{V} \rho\left(\mathrm{r}^{\prime}\right) F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) d V^{\prime}+\frac{1}{4 \pi} \int_{F}\left[F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}}-\phi\left(\mathbf{r}^{\prime}\right) \frac{\partial F\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{\partial n^{\prime}}\right] d F^{\prime}
     \end{equation}
-    
+With this equation the image potential F can be calculated. This can be done by equating the volume integral with volume charge density to the 
+surface integral with surface charge density $\sigma$.
+Then an example is given in which the image potential is calculated of a charge away from an earthed sphere.
+(Really good example, clears up what the effects of the statements above are).\\
+\\
+\noindent It then treats some more examples illustrating the use of image charges:
+
+\begin{itemize}
+    \item The image charge potential
+    \begin{itemize}
+        \item Finding potentials in spherical coordinates 
+    \end{itemize}
+    \item A point charge below a spherical shell
+    \begin{itemize}
+        \item Finding the velocity of a dropped charge below the surface of a spherical conducting shell
+    \end{itemize}
+    \item A point charge in front of a conducting plane
+    \begin{itemize}
+        \item Obtaining the ratio of induced charge on the surface as a function of the distance between the two charges.
+    \end{itemize}
+\end{itemize}
+
+
+\section{Conjugate Functions}
+This method is also called the method of conformal transformations (recall that conformal means angle-preserving holomorphic mapping, which is a property of analytic functions.)
+It works only in the case of 2 dimensional problems and depends on 5 points.\\
+\\
+\noindent Let $W = U + iV$ be a function of the complex variable $z$. (Implying that $U(x,y) \text{ and } V(x,y)$ are real functions as $z = x + iy$)
+W is regarded as the complex potential. Then assume that the derivative of W exists.(Unsure if true)
+If these all hold the following relations should too:
+
+\begin{enumerate}
+    \item The relation between partial derivatives: 
+    \begin{equation}
+        \frac{\partial}{\partial y} = i\frac{\partial}{\partial x} \quad \text{as } \left( \frac{\partial}{\partial y} = \frac{\partial}{\partial z} \frac{\partial z}{\partial y} = i\frac{\partial}{\partial z}, \frac{\partial}{\partial x } = \frac{\partial}{\partial z} \frac{\partial z}{\partial x} = \frac{\partial}{\partial z } \right)
+    \end{equation}
+    \item Two relations between the partial derivatives of U and V (Cauchy Riemann Equations)
+    \begin{equation}
+        \frac{\partial V}{\partial y} = \frac{\partial U}{\partial x}, \quad \frac{\partial V}{\partial x} =-\frac{\partial U}{\partial y}       
+    \end{equation}
+    In short, this is used to show whether a function is a regular (analytic and single valued) one of z.
+    \item At intersection points, U = k and perpendicular to V = c (k and c are constant). Or described mathematically:
+    \begin{equation}
+        \nabla U \cdot \nabla V = 0, \quad \nabla U \perp \nabla V
+    \end{equation}
+    \item The functions U and V are functions of which the Laplacian is equal to 0. And as such the following must hold.
+    \begin{equation}
+        \nabla ^2 U = 0 , \quad \nabla ^2 V = 0
+    \end{equation}
+    This follows from point 2, as each equation satisfying 2 is a harmonic function and thus a solution to the above.
+    \item The magnitudes of the gradients are equal. This follows from the fact that:
+    \begin{equation}
+        0=k \int_{V} \rho\left(\mathbf{r}^{\prime}\right) F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) d V^{\prime}+\frac{1}{4 \pi} \int_{F} F\left(\mathbf{r}, \mathbf{r}^{\prime}\right) \frac{\partial \phi\left(\mathbf{r}^{\prime}\right)}{\partial n^{\prime}} d F^{\prime}
+    \end{equation}
+    Which yields:
+    \begin{equation}
+        \left( \frac{\partial U}{\partial x}  \right)^2 +\left( \frac{\partial U}{\partial y}  \right)^2 = \left( \frac{\partial V}{\partial x}  \right)^2 + \left( \frac{\partial V}{\partial y}  \right)^2
+    \end{equation}
+    Which then implies:
+    \begin{equation}
+        |\nabla U  | = |\nabla V|
+    \end{equation}
+\end{enumerate}
+When one considers a parallel plate condenser with charge q on plate A, naturally a capacitance can be calculated.
+This condenser has 2 parallel plates ($A,A'$), which has the unit length in the third dimension. The plates lie along lines of constant potential V.
+When this is the case the charge can be obtained as follows.
+\begin{equation}
+    q=  \int \sigma dl
+\end{equation}
+When the length in the third dimension does not matter. As the electric field strength \textbf{E} is $\approx 0$ on the back of the plates, $\displaystyle E = 4\pi k \sigma$. The total charge on the plate can thus be calculated as follows (q on one plate, dl along V, V = constant and $\perp$ to U):
+\begin{equation}
+    q = 1\frac{1}{4\pi k }\int |E|dl = \frac{1}{4\pi k}\int|\nabla U|dl = \frac{1}{4\pi k}\int \frac{\partial U}{\partial l}dl
+\end{equation}
+It can then be said that 
+\begin{equation}
+    q = \frac{1}{4 \pi k} [U]
+\end{equation}
+Where [ ] is the corresponding difference in potential. The capacitance can then be calculated by using
+\begin{equation}
+    C = \frac{q}{[V]} = \frac{1}{4\pi k } \frac{[U]}{[V]}
+\end{equation}
+Where V should be proportional to U.\\
+\\
+\noindent Then some examples are given
+\begin{itemize}
+    \item The simple parallel plate condenser
+    \item The condenser with radially assembled plates
+    \begin{itemize}
+        \item The capacity is calculated of a parallel plate condenser that are not parralel but have an shifted angle $\theta$.
+    \end{itemize}
+    \item The cylindrical condenser
+    \item Parallel wires a distance D apart with radii a
+    \item The wire in air 
+    \item Electrolitic determination of the capacity
+    \begin{itemize}
+        \item Finding capacity using an electrolytic experiment
+    \end{itemize}
+\end{itemize}
+
+
+\section{Orthogonal Functions}
+\subsection{Orthogonal functions in general}
+In the following chapters methods are devised on how to generalize a dipole to a configuration of multiple charges.
+For this a few things need to be clarified. We begin with the expansion of arbitrary functions in terms of a set of basis functions and consider the case of one dimensional variables.\\
+\\
+\noindent Functions $\displaystyle U_n(x), n = 1,2,...,N$ are said to be orthogonal in $[a,b]$, if 
+\begin{equation}
+    \int_a^b U_n^\star(x)U_m(x) dx = s_n \delta_{nm}
+\end{equation}
+The non negative number 
+\begin{equation}
+    ||U_n|| = \sqrt{\int_a^b U_n^\star (x) U_n(x) dx }
+\end{equation}
+is the norm of $U_n(x)$. Its normalised when $ \displaystyle \int_a^b U_n^\star (x) U_n(x) dx =1$.
+Furthermore the expansion of an arbitrary function f(x) in terms of a set of basis functions ${U_n(x)}$ is given by the series
+\begin{equation}
+    \sum_{n=1}^N a_nU_n(x)
+\end{equation}
+It is necessary to establish whether the sum converges for infinite N, towards $f(x)$ when talking about convergence of the mean the following must hold
+\begin{equation}
+    \lim_{N \rightarrow \infty} \int_a^b | f(x) - \sum_{n=1}^N a_nU_n(x)|  dx = 0
+\end{equation}
+So that $\displaystyle f(x) = \sum_{n=1}^\infty a_nU_n(x)$, implying uniform convergence. The book then derives the formula of parsevals relation which is as follows:
+\begin{equation}
+    \int_a^b |f(x)|^2dx \geq \sum_{n=1}^N|a_n|^2
+\end{equation}
+Where, when the inequality applies, $a_n$  describe functions $f(x)$ completely.
+
+\subsection{Fourier series, Fourier expansions}
+The functions
+\begin{equation}
+    \varphi_n(x) = \frac{1}{\sqrt{2\pi}}, \frac{sin(x)}{\sqrt{\pi}}, \frac{cos(x)}{\sqrt{\pi}}, \frac{sin(2x)}{\sqrt{\pi}}, \frac{cos(2x)}{\sqrt{\pi}},...
+\end{equation}
+are, within the interval $x \in [-\pi,\pi]$, a complete orthonormal system. This follows from the integrals
+\begin{equation}
+    \begin{aligned}
+    \frac{1}{\pi} \int_{-\pi}^{\pi} \cos m x \cos n x d x &=\delta_{m n} \\
+    \frac{1}{\pi} \int_{-\pi}^{\pi} \sin m x \sin n x d x &=\delta_{m n} \\
+    \int_{-\pi}^{\pi} \cos m x \sin n x d x &=0
+\end{aligned}
+\end{equation}
+within the same interval we can set
+\begin{equation}
+    f(x) = \sum_{n = 0}^\infty c_n \varphi(x), \quad c_n = \int_{-\pi}^{-pi}f(x)\varphi(x)dx
+\end{equation}
+it then also holds that $f(x)$ is periodic.
+\subsection{Complex fourier series}
+The function
+\begin{equation}
+    \varphi(x)_n = \frac{1}{\sqrt{2 l}}e^{jn\pi \frac{x}{l}}, \quad n \in \AmSfont{Z}
+\end{equation}
+on the interval $x \in [-l,l]$ is a complete orthonormal system with
+\begin{equation}
+    \int_{-l}^{-l}dx \varphi_n(x) \varphi_m^\star(x) =\delta_{mn}
+\end{equation}
+so that the periodic function $f(x) = f(x+2l)$ can be expanded as
+\begin{equation}
+    f(x) = \sqrt{2l} \sum_{n = -\infty}^\infty c_n \varphi_n(x), \quad c_n = \frac{1}{2l} \int_{-l}^{l} f(x)e^{-jn\pi x/l}dx
+\end{equation}
+\subsubsection{Fourier integrals}
+We now want to explore the expansion of nonperiodic functions. This is done by evaluating the following series.
+\begin{equation}
+    f(x) = \sum_{n=-\infty}^{\infty}c_n e^{jnx/l} 
+\end{equation}
+This sum is created when evaluating equation 3.52 at $l \rightarrow \infty $ on the interval $j \pi x / l$ . (which becomes increasingly smaller)
+When
+\begin{equation}
+    k_n = \frac{n\pi }{l} \quad (\text{such that} k_{n+1} -k_n = \pi /l), \quad \frac{lc_n}{\pi }= g(k_n)
+\end{equation}
+Which turns into the following
+\begin{equation}
+    f(x) = \pi \sum_{n=-\infty}^\infty e^{jk_nx}\frac{g(k_n)}{l}= \sum_{n=-\infty}^\infty e^{jk_nx}g(k_n)(k_{n-1}-k_n)
+\end{equation}
+Then the following holds when $l \rightarrow \infty$
+\begin{equation}
+    f(x)= \int_{-\infty}^\infty dkg(k)e^{jk\pi}
+\end{equation}
+After which the following can also be deduced:
+\begin{equation}
+    c_n = \frac{1}{2l}\int_{-l}^lf(x)e^{-jn\pi x/l} dx = \frac{\pi g(k_n)}{l}
+\end{equation}
+Which then gives us 
+\begin{equation}
+    g(k) = \frac{1}{2\pi}\int_{-\infty}^\infty f(x) e^{-jkx}dx
+\end{equation}
+This expression is the Fourier transform or spectral function of f(x). The inverse is calculated as follows:
+\begin{equation}
+    \delta(x) = \frac{1}{2\pi} \int_{-\infty}^\infty e^{jkx}dk
+\end{equation}
+This holds because    
+\begin{equation}
+    \begin{aligned}
+    \int_{-\infty}^{\infty} g(k) e^{i k y} d k &=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i k y} d k \int_{-\infty}^{\infty} f(x) e^{-i k x} d x \\
+    &=\int_{-\infty}^{\infty} d x f(x) \frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{i k(y-x)} d k \\
+    &=\int_{-\infty}^{\infty} f(x) \delta(y-x) d x=f(y)
+\end{aligned}
+\end{equation}
+For the Fourier transform to exist, the integral of the function must be absolutely convergent.
+\begin{equation}
+    \int_{-\infty}^\infty |f(x)|dx, \quad \lim_{x \rightarrow \pm \infty} = 0
+\end{equation}
+\subsection{Spherical functions (Legendre, associated Legendre and hyperspherical functions)}
+The factor $\displaystyle \frac{1}{|\textbf{r}-\textbf{r}'|}$, which was treated in the part of the integral representation of the solution of Poisson's equation, can be rewritten as an expansion.
+\begin{equation}
+    \begin{aligned}
+    \frac{1}{\left|\mathbf{r}-r^{\prime}\right|} &=\frac{1}{\sqrt{r^{2}+r^{\prime 2}-2 r r^{\prime} \cos \alpha}} \\
+    &=\frac{1}{r}\left\{1+P_{1}(x) \frac{r^{\prime}}{r}+P_{2}(x)\left(\frac{r^{\prime}}{r}\right)^{2}+\cdots\right\} \theta\left(r-r^{\prime}\right)+\left(r \leftrightarrow r^{\prime}\right) \\
+    &=\frac{1}{r} \sum_{l=0}^{\infty} P_{l}(x)\left(\frac{r^{\prime}}{r}\right)^{l} \theta\left(r-r^{\prime}\right)+\left(r \leftrightarrow r^{\prime}\right)
+    \end{aligned}
+\end{equation}
+where with $x = cos(a)$ 
+\begin{equation}
+    P_0(x) = 1, \quad P_1(x) = x,\quad P_2(x) = \frac{1}{2}(3x^2-1),...
+\end{equation}
+These polynomials are called Legendre polynomials, which in general can be given by the following formula:
+\begin{equation}
+    P_l(x) = \frac{1}{2^ll!}\frac{d^l}{dx^l}(x^2-1)^l
+\end{equation}
+The polynomials additionally form a complete orthonormal system within the intervals $ x\in [1,-1], \alpha \in [0,\pi]$. A complete orthonormal system of functions
+which is defined on the sphere where $\theta \in [0,\pi], \varphi \in [0, 2\pi]$ is given by the hyperspherical functions $Y_{lm}$ which are defined as
+\begin{equation}
+    Y_{lm}(\theta, \varphi) = \left\{ \frac{(2l+l)(l-m!)}{4\pi(l+m)!} \right\}^{\frac{1}{2}}P_l^m(cos(\theta))e^{jm\varphi}
+\end{equation}
+Where $-l \leq m \leq l$. For this the functions
+\begin{equation}
+    P_l^{-m}(x)= (-1)^m(1-x^2)^{\frac{1}{2}}\frac{d^m}{dx^m}P_l(X)
+\end{equation}
+These yield the following example legendre polynomials:
+\begin{equation}
+    Y_{0,0} = \frac{1}{4\pi}, \quad Y_{1,0} =\sqrt{\frac{3}{4\pi}}cos(\theta), \quad Y_{1,1}= -\sqrt{\frac{3}{8\pi}}sin(\theta)e^{j\varphi}
+\end{equation}
+The Legender polynomials with negative indices m are defined as follows
+\begin{equation}
+    P_l^{-m}(x) = (-1)^m \frac{(l-m)!}{(l+m)!}P^m_l(x)
+\end{equation}
+General relations of these polynomials are
+\begin{equation}
+    \begin{aligned}
+    P_{l}^{m}(x)=\frac{(-1)^{m}}{2^{l} l !}\left(1-x^{2}\right)^{m / 2} \frac{d^{l+m}}{d x^{l+m}}\left(x^{2}-1\right)^{l} \\
+    \int_{-1}^{1} P_{l^{\prime}}^{m}(x) P_{l}^{m}(x) d x=\frac{2}{2 l+1} \frac{(l+m) !}{(l-m) !} \delta_{l l^{\prime}} \\
+    \int_{0}^{2 \pi} d \varphi \int_{0}^{\pi} Y_{l^{\prime} m^{\prime}}^{\star}(\theta, \varphi) Y_{l m}(\theta, \varphi) \sin \theta d \theta=\delta_{l l^{\prime}} \delta_{m m^{\prime}}
+    \end{aligned}
+\end{equation}
+Using these relations it can be shown that the following relation is called the addition theorem:
+\begin{equation}
+    P_{l}(\cos \alpha)=\frac{4 \pi}{2 l+1} \sum_{m=-l}^{l} Y_{l m}^{\star}\left(\theta^{\prime}, \varphi^{\prime}\right) Y_{l, m}(\theta, \varphi)
+\end{equation}
+Where $cos(\alpha)=sin(\theta)sin(\theta)'cos(\varphi-\varphi')+cos(\theta)cos(\theta') = cos(\theta-\theta'), \quad\text{ if } \varphi = \varphi'$. This eventually results in the following equation\begin{equation}
+    \begin{aligned}
+    \frac{1}{\left|\boldsymbol{r}-\boldsymbol{r}^{\prime}\right|}=& \frac{1}{r} \sum_{l=0}^{\infty} P_{l}(x)\left(\frac{r^{\prime}}{r}\right)^{l} \theta\left(r-r^{\prime}\right)+\left(\boldsymbol{r} \leftrightarrow r^{\prime}\right) \\
+    =& \sum_{l=0}^{\infty} \sum_{m=-l}^{l} \frac{4 \pi}{2 l+1} \frac{r^{\prime}}{r^{l+1}} Y_{i m}^{*}\left(\theta^{\prime}, \varphi^{\prime}\right) Y_{l m}(\theta, \varphi) \theta\left(r-r^{\prime}\right) \\
+    &+\left(r \leftrightarrow r^{\prime}\right)
+    \end{aligned}
+    \end{equation}
+\section{The multipole expansion}
+The multipole expansion from the course will be used in this section. By using the following equation the field can be calculated for observation points far away
+\begin{equation}
+    E(\textbf{r})= \sum_{i=1}^{N}\frac{K_eq_i}{|\textbf{r}-\textbf{r}'|^2}\frac{\textbf{r}-\textbf{r}'}{|\textbf{r}-\textbf{r}'|}
+\end{equation}
+Where $q_i$ is the $i^{th}$ charge at location $\textbf{r'}$ and $N$ the amount of charges. The dipole moment is quantified as
+\begin{equation}
+    \vec{p}=q\vec{d}
+\end{equation} 
+Where q is the identical charge of the pointcharges and d the distance between them.
+When the distance $\displaystyle r << r'$ it can be said that
+\begin{equation}
+    |\textbf{r}-\textbf{r}'|^2 \simeq \textbf{r}^2 
+\end{equation}
+and
+\begin{equation}
+    \frac{\textbf{r}-\textbf{r}'}{|\textbf{r}-\textbf{r}'|} \simeq \hat{\textbf{r}}
+\end{equation}
+Therefore the $\textbf{E}$ of the dipole can be approximated as
+\begin{equation}
+    \lim_{r\rightarrow \infty} E(\textbf{r})\simeq \frac{kq}{\textbf{r}^2}\hat{\textbf{r}}-\frac{kq}{\textbf{r}^2}\hat{\textbf{r}}=0
+\end{equation}
+Implying that at very large distances away from the dipole, it can be seen as 2 charges cancelling out.\\
+\\
+\noindent For observation points at a finitely close distance away $(\textbf{r}>>d)$ the field can be described as follows.
+\begin{equation}
+\vec{E}_{d i}(\vec{r})=-\frac{k_{e} q}{\left|\vec{r}-\vec{r}_{1}\right|^{2}}\left(\vec{r}-\vec{r}_{1}\right)+\frac{k_{e} q}{\left|\vec{r}-\vec{r}_{2}\right|^{3}}\left(\vec{r}-\vec{r}_{2}\right)
+\end{equation}
+Where $\textbf{r}_1 and \textbf{r}_2$ are locations of the charges. One can represent $\textbf{r}_1 and \textbf{r}_2$ in terms of $\textbf{d}$:
+\begin{equation}
+    \begin{array}{l}
+      \textbf{r}_1 = -d/2 \\
+      \textbf{r}_2 = d/2
+    \end{array}
+\end{equation}
+Equation (3.77) can then be written as:
+\begin{equation}
+    \vec{E}_{d i}(\vec{r})=k_{e} q\left(\frac{\left(\vec{r}-\frac{\vec{d}}{2}\right)}{\left|\vec{r}-\frac{\vec{d}}{2}\right|^{3}}-\frac{\left(\vec{r}+\frac{\vec{d}}{2}\right)}{\left|\vec{r}+\frac{\vec{d}}{2}\right|^{3}}\right)
+\end{equation}
+And when $\textbf{r}>>d$ the following approximations are valid
+\begin{equation}
+    \begin{array}{l}
+    \frac{1}{\left|\vec{r}-\frac{\vec{d}}{2}\right|^{3}} \approx r^{-3}\left(1+\frac{3 \vec{r} \cdot \vec{d}}{2 r^{2}}\right) \\
+    \frac{1}{\left|\vec{r}+\frac{\vec{d}}{2}\right|^{3}} \approx r^{-3}\left(1-\frac{3 \vec{r} \cdot d}{2 r^{2}}\right)
+    \end{array}
+\end{equation}
+Which via the following
+\begin{equation}
+    \begin{aligned}
+        \vec{E}_{d i}(\vec{r}) &\simeq k_{e} q\left(\frac{\left(\vec{r}-\frac{\vec{d}}{2}\right)}{r^{3}}\left(1+\frac{3 \vec{r} \cdot \vec{d}}{2 r^{2}}\right)-\frac{\left(\vec{r}+\frac{\bar{d}}{2}\right)}{r^{3}}\left(1-\frac{3 \vec{r} \cdot \vec{d}}{2 r^{2}}\right)\right)\\
+        &\simeq \frac{k_{a}}{r^{2}}\left((-q d)+\frac{3 \dot{r} \cdot q \vec{d}}{r^{2}} \vec{r}\right)    
+    \end{aligned}
+\end{equation}
+simplifies to
+\begin{equation}
+    \vec{E}_{d_{i}}(\vec{r}) \simeq \frac{k_{e}}{r^{3}}\left(-\vec{p}+\frac{3 \vec{r} \cdot \vec{p}}{r^{2}} \vec{r}\right)
+\end{equation}
